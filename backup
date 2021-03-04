@@ -1,0 +1,22 @@
+for(i=1;i<6;i++){
+
+    async function fetchAPI(){
+        var author  = document.getElementById(`author${i}`);
+        var quote  = document.getElementById(`quote${i}`);
+        $.getJSON("https://api.quotable.io/random", function(data){
+
+            author.innerHTML = data.author;
+            quote.innerHTML = data.content;
+    })
+    }
+
+    fetchAPI().then(() => console.log("done."))
+
+
+ 
+    
+}
+
+
+
+famous quotes == https://api.quotable.io/random?tags=famous-quotes
